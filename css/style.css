@@ -1,5 +1,4 @@
 /* fonts */
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,700&display=swap');
 :root {
     --dark: #161616;
@@ -280,7 +279,6 @@ nav {
     left: 50%;
     transform: translateX(-50%);
     border-radius: 0 0 10px 10px;
-
 }
 
 .s-b-text p {
@@ -289,7 +287,7 @@ nav {
     padding: 0 10px;
 }
 
-.s-box:hover{
+.s-box:hover {
     transform: translateY(-20px);
     transition: all ease .5s;
 }
