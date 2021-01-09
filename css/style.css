@@ -1,16 +1,16 @@
-/* fonts */
+/* ----- fonts ----- */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,700&display=swap');
 :root {
-    --dark: #161616;
+    --dark: #222222;
     --light: #EDF1FD;
-    --font-color: #292929;
     --light-nav: #F4F7FF;
-    --box-shadow: rgba(0, 0, 0, 0.5);
-    --grey: #666666;
-    --green: #17D1AB;
+    --light-yellow: #d4ac67;
+    --yellow: #AF8131;
+    --graphite: #444444;
 }
 
-/* Ustawienia strony */
+/* ----- Ustawienia strony ----- */
 
 body {
     background-color: var(--dark);
@@ -26,21 +26,20 @@ a {
     text-decoration: none;
 }
 
-/* main */
+/* ----- main ----- */
 
 #main {
-    background-image: url("../images/images/bg.png");
+    background-color: var(--dark);
     height: 100vh;
     background-repeat: no-repeat;
     background-position: right bottom;
     background-size: 1330px;
-    background-color: var(--light);
     padding: 30px 50px;
     box-sizing: border-box;
     position: relative;
 }
 
-/* nawigacja */
+/* ----- nawigacja ----- */
 
 nav {
     display: flex;
@@ -50,21 +49,21 @@ nav {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-family: Calibri, sans-serif;
-    background-color: var(--light-nav);
+    background-color: var(--graphite);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 10px 50px;
     box-sizing: border-box;
-    box-shadow: 2px 2px 12px var(--box-shadow);
+    box-shadow: 2px 2px 12px var(--yellow);
     z-index: 1;
 }
 
 .logo {
     font-size: 25px;
     font-weight: bold;
-    color: var(--font-color);
+    color: var(--yellow);
     font-family: Poppins, sans-serif;
 }
 
@@ -73,7 +72,7 @@ nav {
 }
 
 .menu li a {
-    color: var(--font-color);
+    color: var(--yellow);
     padding: 10px 15px;
     font-size: 12px;
 }
@@ -85,7 +84,7 @@ nav {
 }
 
 .lang {
-    color: var(--font-color);
+    color: var(--yellow);
 }
 
 .name {
@@ -98,18 +97,25 @@ nav {
 }
 
 .name p {
-    color: var(--grey);
+    color: var(--light-yellow);
 }
 
 .name h1 {
     font-family: Poppins, sans-serif;
     font-size: 40px;
     letter-spacing: 3px;
-    color: var(--font-color);
+    color: var(--yellow);
 }
 
 .name h1 span {
-    color: var(--green);
+    color: var(--yellow);
+}
+
+.name h3 {
+    font-family: Poppins, sans-serif;
+    font-size: 30px;
+    letter-spacing: 1px;
+    color: red;
 }
 
 .cv-btn {
@@ -123,33 +129,58 @@ nav {
 }
 
 .cv-btn:hover {
-    background-color: var(--grey);
+    background-color: var(--light-yellow);
     transition: all ease 1s;
 }
 
-/* arrow */
+/* ----- arrow ----- */
 
-.black-line {
-    border-right: 3px solid rgba(40, 40, 40, .3);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50%;
-    height: 20%;
-    margin: 50px;
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
 }
 
-.black-line::after {
-    content: " ";
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 20px;
-    right: -21px;
-    bottom: -25px;
+.arrow {
     position: absolute;
-    border-color: var(--dark) transparent transparent transparent;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
+
+.arrow span {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-bottom: 5px solid var(--graphite);
+    border-right: 5px solid var(--graphite);
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.arrow span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.arrow span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px, -20px);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(45deg) translate(20px, 20px);
+    }
+}
+
 
 .social {
     position: absolute;
@@ -159,7 +190,7 @@ nav {
 
 .social a {
     margin: 0 15px;
-    color: var(--grey);
+    color: var(--light-yellow);
 }
 
 .social a:hover {
@@ -167,7 +198,7 @@ nav {
     transition: all ease 1s;
 }
 
-/* sekcja o mnie */
+/* ----- sekcja o mnie ----- */
 
 #about {
     width: 100%;
@@ -177,6 +208,7 @@ nav {
     justify-content: space-between;
     padding: 0 5%;
     box-sizing: border-box;
+    background-color: var(--dark);
 }
 
 .about-text {
@@ -186,7 +218,7 @@ nav {
 }
 
 .about-text h1 {
-    color: var(--green);
+    color: var(--yellow);
     font-size: 5rem;
 }
 
@@ -196,7 +228,7 @@ nav {
 
 .about-text p {
     font-size: 1.2rem;
-    color: var(--grey);
+    color: var(--light-yellow);
 }
 
 .about-text button {
@@ -205,7 +237,7 @@ nav {
     border-radius: 25px;
     border: none;
     outline: none;
-    background-color: var(--green);
+    background-color: var(--yellow);
     margin-top: 30px;
 }
 
@@ -214,13 +246,14 @@ nav {
     transition: all ease 1s;
 }
 
-/* sekcja z usługami */
+/* ----- sekcja z usługami ----- */
 
 #services {
     width: 100%;
     height: 100vh;
     box-sizing: border-box;
     font-family: Calibri, sans-serif;
+    background-color: var(--dark);
     color: var(--light);
     display: flex;
     flex-direction: column;
@@ -235,7 +268,8 @@ nav {
 }
 
 .s-heading h1 {
-    font-size: 3rem;
+    color: var(--yellow);
+    font-size: 5rem;
 }
 
 .b-container {
@@ -245,17 +279,17 @@ nav {
 }
 
 .s-heading p {
-    color: var(--grey);
+    color: var(--light-yellow);
 }
 
 .s-box {
-    width: 350px;
+    width: 400px;
     height: 500px;
-    background-color: var(--grey);
+    background-color: var(--light-yellow);
     margin: 20px;
+
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 2px 2px 5px var(--grey);
     position: relative;
 }
 
@@ -283,6 +317,7 @@ nav {
 
 .s-b-text p {
     font-size: 1.1em;
+    color: var(--dark);
     text-align: center;
     padding: 0 10px;
 }
@@ -290,4 +325,139 @@ nav {
 .s-box:hover {
     transform: translateY(-20px);
     transition: all ease .5s;
+}
+
+/* ----- sekcja portflio ----- */
+
+#portfolio {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    box-sizing: border-box;
+    background-color: var(--dark);
+}
+
+/* ----- sekcja kontaktu ----- */
+
+#contact {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15%;
+    box-sizing: border-box;
+    background-color: var(--dark);
+}
+
+/* tekst */
+
+.contact-text {
+    width: 50%;
+    color: var(--light);
+    font-family: Calibri, sans-serif;
+}
+
+.contact-text h1 {
+    color: var(--yellow);
+    font-size: 5rem;
+}
+
+.contact-text h2 {
+    font-size: 1.5rem;
+}
+
+.contact-text p {
+    font-size: 1.2rem;
+    padding: 20px;
+    padding-left: 35px;
+    color: var(--light-yellow);
+}
+
+.contact-social {
+    padding: 20px;
+    left: 50px;
+    bottom: 50px;
+}
+
+.contact-social a {
+    margin: 0 15px;
+    color: var(--light-yellow);
+}
+
+.contact-social a:hover {
+    color: var(--yellow);
+    transition: all ease 1s;
+}
+
+/* message form */
+
+.contact-container {
+    border-radius: 5px;
+    background-color: var(--graphite);
+    padding: 30px;
+    margin-top: 100px;
+}
+
+.contact-container label {
+    font-family: Calibri, sans-serif;
+    font-size: 15px;
+    color: var(--light-yellow);
+}
+
+.contact-name {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--dark);
+    font-family: Calibri, sans-serif;
+    font-size: 15px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical
+}
+
+.contact-email {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--dark);
+    font-family: Calibri, sans-serif;
+    font-size: 15px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical
+}
+
+.contact-message {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--dark);
+    font-family: Calibri, sans-serif;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical
+}
+
+.contact-btn {
+    background-color: var(--dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--light-yellow);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+}
+
+.contact-btn:hover {
+    background-color: var(--dark);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
