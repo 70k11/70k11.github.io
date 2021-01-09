@@ -419,8 +419,8 @@ body {
 }
 
 .contact-email {
-    width: 100%;
     padding: 12px;
+    width: 100%;
     border: 1px solid var(--dark);
     font-family: Calibri, sans-serif;
     font-size: 15px;
