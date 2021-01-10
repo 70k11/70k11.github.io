@@ -3,11 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,700&display=swap');
 :root {
     --dark: #222222;
-    --light: #EDF1FD;
-    --light-nav: #F4F7FF;
-    --light-yellow: #d4ac67;
-    --yellow: #AF8131;
     --graphite: #444444;
+    --yellow: #AF8131;
+    --light-yellow: #d4ac67;
+    --light: #EDF1FD;
 }
 
 /* ----- Ustawienia strony ----- */
@@ -111,6 +110,8 @@ nav {
     color: var(--yellow);
 }
 
+/* warning text */
+
 .name h3 {
     font-family: Poppins, sans-serif;
     font-size: 30px;
@@ -119,11 +120,14 @@ nav {
 }
 
 .cv-btn {
-    background-color: var(--dark);
+    background-color: var(--yellow);
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--light);
+    color: var(--dark);
+    border-radius: 25px;
+    border: none;
+    outline: none;
     width: 250px;
     height: 50px;
 }
@@ -152,8 +156,8 @@ body {
     display: block;
     width: 30px;
     height: 30px;
-    border-bottom: 5px solid var(--graphite);
-    border-right: 5px solid var(--graphite);
+    border-bottom: 5px solid var(--light);
+    border-right: 5px solid var(--light);
     transform: rotate(45deg);
     margin: -10px;
     animation: animate 2s infinite;
@@ -181,7 +185,6 @@ body {
     }
 }
 
-
 .social {
     position: absolute;
     left: 50px;
@@ -190,11 +193,11 @@ body {
 
 .social a {
     margin: 0 15px;
-    color: var(--light-yellow);
+    color: var(--yellow);
 }
 
 .social a:hover {
-    color: var(--dark);
+    color: var(--light);
     transition: all ease 1s;
 }
 
@@ -242,7 +245,7 @@ body {
 }
 
 .about-text button:hover {
-    background-color: var(--light);
+    background-color: var(--light-yellow);
     transition: all ease 1s;
 }
 
@@ -287,7 +290,6 @@ body {
     height: 500px;
     background-color: var(--light-yellow);
     margin: 20px;
-
     border-radius: 10px;
     overflow: hidden;
     position: relative;
@@ -322,10 +324,12 @@ body {
     padding: 0 10px;
 }
 
+/*
 .s-box:hover {
     transform: translateY(-20px);
     transition: all ease .5s;
 }
+*/
 
 /* ----- sekcja portflio ----- */
 
@@ -334,7 +338,33 @@ body {
     height: 100vh;
     display: flex;
     box-sizing: border-box;
+    align-items: center;
     background-color: var(--dark);
+    justify-content: space-between;
+    padding: 0 5%;
+    background-color: var(--dark);
+}
+
+.portfolio-text {
+    width: 50%;
+    color: var(--light);
+    font-family: Calibri, sans-serif;
+}
+
+.portfolio-text h1 {
+    color: var(--yellow);
+    letter-spacing: 1px;
+    padding: 2px;
+    font-size: 5rem;
+}
+
+.portfolio-text h2 {
+    font-size: 3rem;
+}
+
+.portfolio-text p {
+    font-size: 1.2rem;
+    color: var(--light-yellow);
 }
 
 /* ----- sekcja kontaktu ----- */
